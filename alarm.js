@@ -1,4 +1,36 @@
-setInterval(fank, 1000);
+
+const min = minToMsec(1)
+console.log(min);
+
+
+function takeMinute() {
+    const inputMinute = document.getElementById('input-minute');
+    const inputMinuteText = inputMinute.value;
+    const lastInputMinute = parseFloat(inputMinuteText);
+    inputMinute.value = ' ';
+
+
+    // mili second to minute converting function 
+    function minToMsec(sec) {
+        const msec = sec * 1000;
+        const msecToMin = msec * 60;
+        return msecToMin;
+    }
+
+
+    const minute = minToMsec(lastInputMinute);
+    return minute;
+
+}
+
+const alarmTime = takeMinute();
+
+
+
+
+
+
+setInterval(fank, !{ alarmTime });
 
 function fank() {
 
@@ -13,9 +45,4 @@ function fank() {
         const audio = document.getElementById('audio');
         audio.play();
     }
-
-
-
-
-
 }
